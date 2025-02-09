@@ -1,5 +1,5 @@
 # Bisection Method
-
+[![codecov](https://codecov.io/gh/erfanhamdi/newton-raphson/graph/badge.svg?token=BTF8TXIECJ)](https://codecov.io/gh/erfanhamdi/newton-raphson)
 ## Overview
 Newton-Raphson root finding method is implemented in this script.
 
