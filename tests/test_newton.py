@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 import sympy as sp  
-from newton_raphson_script import newton_raphson, J_inv, is_square, NewtonResult
+from src.newton_raphson_script import newton_raphson, J_inv, is_square, NewtonResult
 from dataclasses import fields
 
 def test_result_storage():
