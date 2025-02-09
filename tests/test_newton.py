@@ -11,6 +11,12 @@ def test_result_storage():
     assert output_instance.iterations == [1.0, 0.5]
     assert output_instance.errors == [0.5]
 
+def test_singular_matrix():
+    """Test singular matrix handling"""
+    A = np.array([[1, 1], [1, 1]])
+    with pytest.raises(ValueError):
+        J_inv(A)
+        
 def test_polynomial():
     """Test Newton-Raphson with polynomial function"""
     f = lambda x: x**3 - 2*x - 5

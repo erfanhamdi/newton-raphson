@@ -31,8 +31,8 @@ def J_inv(J):
         try:
             return np.linalg.inv(J)
         except np.linalg.LinAlgError:
-            print("Jacobian is singular. Stopping iterations.")
-            return None
+            # print("Jacobian is singular. Stopping iterations.")
+            raise ValueError("Jacobian is singular. Stopping iterations.")
     
 def newton_raphson(
     f: Callable,
@@ -75,26 +75,3 @@ def newton_raphson(
         X = X_new
 
     return NewtonResult(X, iterations, errors, False, max_iter)
-
-if __name__ == "__main__":
-
-    x = sp.symbols('x')
-    f1 = x**3 - 2*x - 5
-    J1 = sp.diff(f1, x)
-    f1 = sp.lambdify(x, f1)
-    J1 = sp.lambdify(x, J1)
-    init_guess = 2
-
-    # result = newton_raphson(f1, J1, init_guess=init_guess, max_iter = 1000)
-    
-    # Print results
-    # print(f"Root found: {result.root}")
-    # print(f"Converged: {result.converged}")
-    # print(f"Number of iterations: {result.iterations_count}")
-
-    from sympy import symbols, sqrt, Eq
-
-# Define variables
-    
-    # Display the equation
-    # print(equation)
